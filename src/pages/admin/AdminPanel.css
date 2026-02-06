@@ -1,0 +1,11 @@
+.admin-panel-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  text-transform: uppercase;
+}
+
+.admin-panel-actions > a {
+  color: var(--color-text-800);
+  border: 1px solid ;
+}
