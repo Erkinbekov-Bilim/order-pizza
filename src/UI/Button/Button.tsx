@@ -11,32 +11,29 @@ interface IButtonProps extends React.PropsWithChildren {
   disabled?: boolean;
 }
 
-const Button: React.FC<IButtonProps> = React.memo(
-  ({
-    type = 'button',
-    text,
-    className,
-    style,
-    onClick,
-    children,
-    title,
-    disabled,
-  }) => {
-    return (
-      <button
-        type={type}
-        className={className}
-        style={style}
-        onClick={onClick}
-        title={title}
-        disabled={disabled}
-      >
-        {text}
-        {children}
-      </button>
-    );
-  },
-  (prevProps, nextProps) => prevProps.text === nextProps.text,
-);
+const Button: React.FC<IButtonProps> = ({
+  type = 'button',
+  text,
+  className,
+  style,
+  onClick,
+  children,
+  title,
+  disabled,
+}) => {
+  return (
+    <button
+      type={type}
+      className={className}
+      style={style}
+      onClick={onClick}
+      title={title}
+      disabled={disabled}
+    >
+      {text}
+      {children}
+    </button>
+  );
+};
 
 export default Button;
