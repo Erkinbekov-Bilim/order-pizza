@@ -10,12 +10,10 @@ const Aside: FC<IAsideProps> = ({ items }) => {
         <div className="aside-content">
           <nav className="aside-nav">
             {items.map((item) => (
-              <>
-                <NavLink to={item.to} className="nav-link">
-                  {item.icon}
-                  <p className="nav-link">{item.title}</p>
-                </NavLink>
-              </>
+              <NavLink to={item.to} className="nav-link" key={item.title}>
+                {item.icon}
+                <p className="nav-link">{item.title}</p>
+              </NavLink>
             ))}
           </nav>
         </div>
