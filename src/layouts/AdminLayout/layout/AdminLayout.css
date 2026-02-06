@@ -1,0 +1,21 @@
+.admin-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  height: 100vh;
+}
+
+.admin-aside {
+  border-right: 1px solid rgb(231, 218, 228);
+  padding: var(--space-xxl) var(--space-xxl);
+}
+
+.admin-layout-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin-aside-content {
+  margin-top: 30%;
+}
