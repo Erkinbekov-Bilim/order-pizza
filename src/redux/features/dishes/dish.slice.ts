@@ -6,9 +6,9 @@ interface IDishState {
   dishes: IDish[];
   dish: IDish | null;
   loading: {
-    fetch: boolean;
-    delete: boolean;
-    send: boolean;
+    fetchOneLoading: boolean;
+    deleteLoading: boolean;
+    postLoading: boolean;
   };
   isError: boolean;
 }
@@ -17,9 +17,9 @@ const initialState: IDishState = {
   dishes: [],
   dish: null,
   loading: {
-    fetch: false,
-    delete: false,
-    send: false,
+    fetchOneLoading: false,
+    deleteLoading: false,
+    postLoading: false,
   },
   isError: false,
 };
@@ -31,15 +31,15 @@ export const dishSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(postNewDish.pending, (state) => {
       state.isError = false;
-      state.loading.send = true;
+      state.loading.postLoading = true;
     });
     builder.addCase(postNewDish.fulfilled, (state) => {
       state.isError = false;
-      state.loading.send = false;
+      state.loading.postLoading = false;
     });
     builder.addCase(postNewDish.rejected, (state) => {
       state.isError = true;
-      state.loading.send = false;
+      state.loading.postLoading = false;
     });
   },
 });
