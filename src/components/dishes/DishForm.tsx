@@ -43,7 +43,10 @@ const DishForm: React.FC<IDishFormProps> = ({
   } = useForm({ defaultValues });
 
   const onSubmit = (data: IDishMutation) => {
-    onSubmitDish(data);
+    onSubmitDish({
+      ...data,
+      price: Number(data.price),
+    });
     reset(formValue);
   };
 
@@ -141,19 +144,17 @@ const DishForm: React.FC<IDishFormProps> = ({
             <div className="form-image-preview">
               <img src={imagePreview} alt="image placeholder" />
             </div>
-            <Button
-              className="form-submit-btn"
-              type="submit"
-              disabled={isLoading}
-            >
-              {isLoading ? (
-                <div className="loader-button">
-                  <Loader />
-                </div>
-              ) : (
-                'save'
-              )}
-            </Button>
+            {isLoading ? (
+              <div>
+                <Loader />
+              </div>
+            ) : (
+              <>
+                <Button className="form-submit-btn" type="submit">
+                  save
+                </Button>
+              </>
+            )}
           </div>
         </form>
       </div>
