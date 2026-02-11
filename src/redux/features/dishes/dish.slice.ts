@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { IDish } from '../../../types/dish/dish';
-import { getDish, getDishes, postNewDish } from './dish.api';
+import { getDish, getDishes, postNewDish, updateDish } from './dish.api';
 import type { IDishMutation } from '../../../types/dish/dish-mutation';
 
 export interface IDishState {
@@ -9,7 +9,7 @@ export interface IDishState {
   loading: {
     fetchLoading: boolean;
     deleteLoading: boolean;
-    postLoading: boolean;
+    sendLoading: boolean;
   };
   isError: boolean;
 }
@@ -20,7 +20,7 @@ const initialState: IDishState = {
   loading: {
     fetchLoading: false,
     deleteLoading: false,
-    postLoading: false,
+    sendLoading: false,
   },
   isError: false,
 };
@@ -32,15 +32,15 @@ export const dishSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(postNewDish.pending, (state) => {
       state.isError = false;
-      state.loading.postLoading = true;
+      state.loading.sendLoading = true;
     });
     builder.addCase(postNewDish.fulfilled, (state) => {
       state.isError = false;
-      state.loading.postLoading = false;
+      state.loading.sendLoading = false;
     });
     builder.addCase(postNewDish.rejected, (state) => {
       state.isError = true;
-      state.loading.postLoading = false;
+      state.loading.sendLoading = false;
     });
 
     builder.addCase(getDishes.pending, (state) => {
@@ -69,7 +69,7 @@ export const dishSlice = createSlice({
     builder.addCase(getDish.rejected, (state) => {
       state.loading.fetchLoading = false;
       state.isError = true;
-    })
+    });
   },
 });
 
