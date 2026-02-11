@@ -24,3 +24,40 @@
     var(--color-shadow) 0px 6px 12px -2px,
     var(--color-shadow) 0px 0px 0px 1px;
 }
+
+.dishes {
+  position: relative;
+  width: 90%;
+  height: var(--container-height);
+  background: var(--color-bg-card-white);
+  border-radius: var(--border-radius-md);
+  margin-top: 3%;
+  border: 1px solid var(--color-border);
+  padding: var(--space-md);
+  overflow: hidden;
+}
+
+.dishes-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  overflow-y: auto;
+  max-height: calc(var(--container-height) - 50px);
+  padding-right: var(--space-md);
+}
+
+.dishes-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.dishes-content::-webkit-scrollbar-track {
+  background: var(--color-scrollbar-track);
+}
+
+.dishes-content::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar-thumb);
+}
+
+.dishes-content::-webkit-scrollbar-thumb:hover {
+  background: var(--color-scrollbar-thumb);
+}
