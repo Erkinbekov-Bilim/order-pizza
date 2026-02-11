@@ -56,6 +56,20 @@ export const dishSlice = createSlice({
       state.loading.fetchLoading = false;
       state.isError = true;
     });
+
+    builder.addCase(getDish.pending, (state) => {
+      state.loading.fetchLoading = true;
+      state.isError = false;
+    });
+    builder.addCase(getDish.fulfilled, (state, {payload: dish}) => {
+      state.loading.fetchLoading = false;
+      state.isError = false;
+      state.dish = dish;
+    });
+    builder.addCase(getDish.rejected, (state) => {
+      state.loading.fetchLoading = false;
+      state.isError = true;
+    })
   },
 });
 
