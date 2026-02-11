@@ -68,10 +68,11 @@
 }
 
 .form-image-preview {
-  width: 100%;
+  width: 350px;
   height: 350px;
   object-fit: cover;
   border-radius: var(--border-radius-sm);
+  margin: 0 auto;
 }
 
 .form-image-preview > img {
