@@ -1,6 +1,6 @@
 export interface IDish {
   id: string;
   title: string;
-  price: number;
+  price: number | null;
   image: string;
 }
