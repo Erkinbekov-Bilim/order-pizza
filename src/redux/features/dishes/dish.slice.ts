@@ -1,12 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { IDish } from '../../../types/dish/dish';
-import { postNewDish } from './dish.api';
+import { getDish, getDishes, postNewDish } from './dish.api';
+import type { IDishMutation } from '../../../types/dish/dish-mutation';
 
-interface IDishState {
+export interface IDishState {
   dishes: IDish[];
-  dish: IDish | null;
+  dish: IDishMutation | null;
   loading: {
-    fetchOneLoading: boolean;
+    fetchLoading: boolean;
     deleteLoading: boolean;
     postLoading: boolean;
   };
@@ -17,7 +18,7 @@ const initialState: IDishState = {
   dishes: [],
   dish: null,
   loading: {
-    fetchOneLoading: false,
+    fetchLoading: false,
     deleteLoading: false,
     postLoading: false,
   },
@@ -40,6 +41,20 @@ export const dishSlice = createSlice({
     builder.addCase(postNewDish.rejected, (state) => {
       state.isError = true;
       state.loading.postLoading = false;
+    });
+
+    builder.addCase(getDishes.pending, (state) => {
+      state.loading.fetchLoading = true;
+      state.isError = false;
+    });
+    builder.addCase(getDishes.fulfilled, (state, { payload: dishes }) => {
+      state.loading.fetchLoading = false;
+      state.isError = false;
+      state.dishes = dishes;
+    });
+    builder.addCase(getDishes.rejected, (state) => {
+      state.loading.fetchLoading = false;
+      state.isError = true;
     });
   },
 });
