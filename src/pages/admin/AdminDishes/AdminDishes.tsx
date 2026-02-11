@@ -54,7 +54,7 @@ const AdminDishes = () => {
     return (
       <>
         {dishes.map((dish) => (
-          <DishesCard dish={dish} />
+          <DishesCard dish={dish} key={dish.id} />
         ))}
       </>
     );
