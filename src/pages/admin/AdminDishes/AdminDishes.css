@@ -39,7 +39,7 @@
 
 .dishes-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
   gap: 30px;
   overflow-y: auto;
   max-height: calc(var(--container-height) - 50px);
