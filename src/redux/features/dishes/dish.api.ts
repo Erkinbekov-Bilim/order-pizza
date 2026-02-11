@@ -33,3 +33,20 @@ export const getDishes = createAsyncThunk<IDish[]>(
     return [];
   },
 );
+
+export const getDish = createAsyncThunk<IDishMutation, { id: string }>(
+  'dish/getDish',
+  async ({ id }) => {
+    const response = await axiosAPI.get<IDishMutation>(`/dishes${id}.json`);
+    const data = response.data;
+
+    return data;
+  },
+);
+
+export const updateDish = createAsyncThunk<void, { dish: IDishMutation }>(
+  'dish/putDish',
+  async ({ dish }) => {
+    await axiosAPI.put<IDishMutation>('/dishes.json', dish);
+  },
+);
