@@ -7,11 +7,11 @@ import {
 } from '../../../redux/hooks/reduxHooks';
 import { postNewDish } from '../../../redux/features/dishes/dish.api';
 import { useNavigate } from 'react-router-dom';
-import { selectLoadingSend } from '../../../redux/features/dishes/dish.selectors';
+import { selectLoading } from '../../../redux/features/dishes/dish.selectors';
 
 const AdminAddDish = () => {
   const dispatch = useAppDispatch();
-  const sendLoading = useAppSelector(selectLoadingSend);
+  const { sendLoading } = useAppSelector(selectLoading);
   const navigate = useNavigate();
 
   const onSubmitDish = async (dish: IDishMutation) => {
