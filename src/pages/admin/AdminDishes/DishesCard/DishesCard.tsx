@@ -23,7 +23,7 @@ const DishesCard: FC<IDishCardProps> = ({ dish }) => {
         </div>
         <div className="dish-card-actions">
           <Link
-            to={'edit'}
+            to={`${dish.id}/edit`}
             className="dish-card-action dish-card-action-edit"
             title="Edit"
           >
