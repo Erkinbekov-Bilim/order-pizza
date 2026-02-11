@@ -61,13 +61,26 @@ export const dishSlice = createSlice({
       state.loading.fetchLoading = true;
       state.isError = false;
     });
-    builder.addCase(getDish.fulfilled, (state, {payload: dish}) => {
+    builder.addCase(getDish.fulfilled, (state, { payload: dish }) => {
       state.loading.fetchLoading = false;
       state.isError = false;
       state.dish = dish;
     });
     builder.addCase(getDish.rejected, (state) => {
       state.loading.fetchLoading = false;
+      state.isError = true;
+    });
+
+    builder.addCase(updateDish.pending, (state) => {
+      state.loading.sendLoading = true;
+      state.isError = false;
+    });
+    builder.addCase(updateDish.fulfilled, (state) => {
+      state.loading.sendLoading = false;
+      state.isError = false;
+    });
+    builder.addCase(updateDish.rejected, (state) => {
+      state.loading.sendLoading = false;
       state.isError = true;
     });
   },
