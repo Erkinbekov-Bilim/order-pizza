@@ -37,16 +37,16 @@ export const getDishes = createAsyncThunk<IDish[]>(
 export const getDish = createAsyncThunk<IDishMutation, { id: string }>(
   'dish/getDish',
   async ({ id }) => {
-    const response = await axiosAPI.get<IDishMutation>(`/dishes${id}.json`);
+    const response = await axiosAPI.get<IDishMutation>(`/dishes/${id}.json`);
     const data = response.data;
 
     return data;
   },
 );
 
-export const updateDish = createAsyncThunk<void, { dish: IDishMutation }>(
-  'dish/putDish',
-  async ({ dish }) => {
-    await axiosAPI.put<IDishMutation>('/dishes.json', dish);
-  },
-);
+export const updateDish = createAsyncThunk<
+  void,
+  { id: string; dish: IDishMutation }
+>('dish/putDish', async ({ id, dish }) => {
+  await axiosAPI.put<IDishMutation>(`/dishes/${id}.json`, dish);
+});
