@@ -6,6 +6,7 @@ import Home from './containers/dishes/Home/Home';
 import AdminDishes from './pages/admin/AdminDishes/AdminDishes';
 import AdminOrderDishes from './pages/admin/AdminOrderDishes/AdminOrderDishes';
 import AdminAddDish from './pages/admin/AdminAddDish/AdminAddDish';
+import AdminEditDish from './pages/admin/AdminEditDish/AdminEditDish';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route element={<AdminLayout />}>
           <Route path="/admin" element={<AdminPanel />}>
             <Route path="dishes" element={<AdminDishes />} />
+            <Route path='dishes/:id/edit' element={<AdminEditDish/>}/>
             <Route path="dishes/add" element={<AdminAddDish />} />
             <Route path="orders" element={<AdminOrderDishes />} />
           </Route>
