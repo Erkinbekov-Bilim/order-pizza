@@ -1,6 +1,5 @@
 .header {
   background: var(--color-bg-header);
-  padding: var(--space-sm) 0;
 }
 
 .main {
