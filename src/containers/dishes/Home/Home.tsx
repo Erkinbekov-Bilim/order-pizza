@@ -57,7 +57,7 @@ const Home = () => {
           <DishesCard dish={dish} key={dish.id}>
             <Button
               className="dish-card-action dish-card-action-add-cart"
-              title="Delete"
+              title="Choose"
             >
               <p className="add-cart-text">choose</p>
               <FontAwesomeIcon icon={faCartArrowDown} />
