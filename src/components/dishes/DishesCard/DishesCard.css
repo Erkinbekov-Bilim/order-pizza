@@ -1,0 +1,88 @@
+.dish-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+  overflow: hidden;
+  background: var(--color-bg-card-white);
+}
+
+.dish-image-block {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  padding: var(--space-md);
+}
+
+.dish-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.dish-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-md);
+}
+
+.dish-name {
+  text-transform: uppercase;
+  letter-spacing: var(--space-xs);
+}
+
+.dish-price {
+  font-weight: 700;
+  font-family: var(--font-second-monda);
+}
+
+.dish-card-actions {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-lg);
+  justify-content: center;
+  align-items: center;
+  margin: var(--space-md) 0;
+}
+
+.dish-card-action {
+  font-size: var(--text-lg);
+  padding: var(--space-md);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.dish-card-action:hover {
+  scale: 0.9;
+}
+
+.dish-card-action-edit {
+  background: var(--color-bg-button-500);
+  color: var(--color-text-900);
+}
+
+.dish-card-action-delete {
+  background: var(--color-incorrect);
+  color: var(--color-text-white);
+}
+
+.dish-card-action-add-cart {
+  width: 80%;
+  display: flex;
+  flex-direction: row-reverse;
+  text-transform: uppercase;
+  letter-spacing: var(--space-xs);
+  gap: var(--space-lg);
+  background: var(--color-bg-button-600);
+  color: var(--color-text-white);
+  border-color: var(--color-border-button);
+}
