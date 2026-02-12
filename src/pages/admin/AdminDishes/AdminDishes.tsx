@@ -1,7 +1,7 @@
 import './AdminDishes.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChampagneGlasses } from '@fortawesome/free-solid-svg-icons';
+import { faChampagneGlasses, faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import {
   useAppDispatch,
   useAppSelector,
@@ -13,8 +13,9 @@ import {
 } from '../../../redux/features/dishes/dish.selectors';
 import { useEffect } from 'react';
 import { getDishes } from '../../../redux/features/dishes/dish.api';
-import DishesCard from './DishesCard/DishesCard';
+import DishesCard from '../../../components/dishes/DishesCard/DishesCard';
 import Loader from '../../../UI/Loader/Loader';
+import Button from '../../../UI/Button/Button';
 
 const AdminDishes = () => {
   const dispatch = useAppDispatch();
@@ -54,7 +55,21 @@ const AdminDishes = () => {
     return (
       <>
         {dishes.map((dish) => (
-          <DishesCard dish={dish} key={dish.id} />
+          <DishesCard dish={dish} key={dish.id}>
+            <Link
+              to={`${dish.id}/edit`}
+              className="dish-card-action dish-card-action-edit"
+              title="Edit"
+            >
+              <FontAwesomeIcon icon={faPen} />
+            </Link>
+            <Button
+              className="dish-card-action dish-card-action-delete"
+              title="Delete"
+            >
+              <FontAwesomeIcon icon={faTrash} />
+            </Button>
+          </DishesCard>
         ))}
       </>
     );
