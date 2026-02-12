@@ -1,14 +1,17 @@
-import React, { type PropsWithChildren } from 'react';
 import Header from '../Header';
 import Container from '../../Container/Container';
 import '../../Layout.css';
+import './MainLayout.css';
+import { Outlet } from 'react-router-dom';
 
-const MainLayout: React.FC<PropsWithChildren> = ({ children }) => {
+const MainLayout = () => {
   return (
     <>
       <Header />
       <main className="main">
-        <Container>{children}</Container>
+        <Container>
+          <Outlet />
+        </Container>
       </main>
     </>
   );
