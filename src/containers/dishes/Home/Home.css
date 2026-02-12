@@ -1,0 +1,5 @@
+.main-dishes-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 280px));
+  gap: 30px;
+}
