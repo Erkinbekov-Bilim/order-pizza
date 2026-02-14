@@ -26,6 +26,13 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.absolute-position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 a {
   text-decoration: none;
 }
@@ -36,4 +43,12 @@ a:active {
 
 ul {
   list-style: none;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: var(--border-radius-md);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: var(--border-radius-md);
 }
