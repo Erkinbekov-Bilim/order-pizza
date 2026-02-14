@@ -10,7 +10,7 @@ import {
 import { useNavigate, useParams } from 'react-router-dom';
 import { getDish, updateDish } from '../../../redux/features/dishes/dish.api';
 import type { IDishMutation } from '../../../types/dish/dish-mutation';
-import DishForm from '../../../components/dishes/DishForm';
+import DishForm from '../../../components/dishes/DishForm/DishForm';
 
 const AdminEditDish = () => {
   const { id } = useParams<{ id: string }>();
