@@ -1,5 +1,5 @@
 import './AdminAddDish.css';
-import DishForm from '../../../components/dishes/DishForm';
+import DishForm from '../../../components/dishes/DishForm/DishForm';
 import type { IDishMutation } from '../../../types/dish/dish-mutation';
 import {
   useAppDispatch,
