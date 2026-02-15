@@ -92,15 +92,20 @@ const Home = () => {
   return (
     <>
       <div className="main-dishes">
-        <Button
-          className="nav-btn-checkout"
-          onClick={toggleModal}
-          text="checkout"
-        >
-          {totalCartDishesPrice > 0 && (
-            <p className="total-cart-dish-price">{totalCartDishesPrice} kgs</p>
-          )}
-        </Button>
+        <div className="dishes-actions">
+          <Button
+            className="nav-btn-checkout"
+            onClick={toggleModal}
+            text="checkout"
+          >
+            {totalCartDishesPrice > 0 && (
+              <p className="total-cart-dish-price">
+                {totalCartDishesPrice} kgs
+              </p>
+            )}
+          </Button>
+          <p className='cart-dishes-count'>{cartDishes.length}</p>
+        </div>
         <div className="main-dishes-content">{renderContent()}</div>
         {isOpenModal && (
           <>

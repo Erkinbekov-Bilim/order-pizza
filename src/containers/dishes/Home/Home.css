@@ -5,6 +5,11 @@
   margin-top: var(--space-lg);
 }
 
+.dishes-actions {
+  width: 100%;
+  position: relative;
+}
+
 .nav-btn-checkout {
   display: flex;
   flex-direction: row;
@@ -19,9 +24,25 @@
 }
 
 .nav-btn-checkout:hover {
-  transform: scale(0.9);
+  background: var(--color-bg-button-hover);
 }
 
 .total-cart-dish-price {
   text-transform: uppercase;
+}
+
+.cart-dishes-count {
+  position: absolute;
+  border: 1px solid var(--color-border-100);
+  width: 25px;
+  height: 25px;
+  border-radius: var(--circular);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-white);
+  background: var(--color-bg-100);
+  font-weight: 600;
+  top: -15px;
+  left: -5px;
 }
