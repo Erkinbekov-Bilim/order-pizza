@@ -13,3 +13,37 @@
   text-align: center;
   margin-bottom: var(--space-xl);
 }
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-cart-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.empty-cart-info-text {
+  text-transform: capitalize;
+  letter-spacing: var(--space-xs);
+}
+
+.empty-cart-info-title {
+  color: var(--color-text-500);
+  font-weight: 600;
+  font-size: var(--text-lg);
+}
+
+.empty-cart-image {
+  width: 450px;
+  height: auto;
+}
+
+.empty-cart-image > img {
+  width: 100%;
+  display: block;
+}
