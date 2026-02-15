@@ -6,6 +6,9 @@
 }
 
 .nav-btn-checkout {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-md);
   padding: var(--space-md) var(--space-lg);
   border-radius: var(--border-radius-lg);
   text-transform: uppercase;
@@ -17,4 +20,8 @@
 
 .nav-btn-checkout:hover {
   transform: scale(0.9);
+}
+
+.total-cart-dish-price {
+  text-transform: uppercase;
 }

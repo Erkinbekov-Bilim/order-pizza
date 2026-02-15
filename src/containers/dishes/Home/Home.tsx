@@ -19,13 +19,24 @@ import DishCart from './DishCart/DishCart';
 import { addDishToCart } from '../../../redux/features/dishes/dishCart/dishCart.slice';
 import Backdrop from '../../../UI/Backdrop/Backdrop';
 import Modal from '../../../UI/Modal/Modal';
+import { selectCartDish } from '../../../redux/features/dishes/dishCart/dishCart.selectors';
+import type { IDishCart } from '../../../types/dish/cart/dishCart';
 
 const Home = () => {
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
   const dispatch = useAppDispatch();
   const dishes = useAppSelector(selectDishes);
+  const cartDishes = useAppSelector(selectCartDish);
   const { fetchLoading } = useAppSelector(selectLoading);
   const isError = useAppSelector(selectIsError);
+
+  const totalCartDishesPrice = cartDishes.reduce((acc, cart: IDishCart) => {
+    if (cart.dish.price) {
+      acc += cart.count * cart.dish.price;
+    }
+
+    return acc;
+  }, 0);
 
   const toggleModal = () => {
     setIsOpenModal((prev) => !prev);
@@ -81,8 +92,14 @@ const Home = () => {
   return (
     <>
       <div className="main-dishes">
-        <Button className="nav-btn-checkout" onClick={toggleModal}>
-          checkout
+        <Button
+          className="nav-btn-checkout"
+          onClick={toggleModal}
+          text="checkout"
+        >
+          {totalCartDishesPrice > 0 && (
+            <p className="total-cart-dish-price">{totalCartDishesPrice} kgs</p>
+          )}
         </Button>
         <div className="main-dishes-content">{renderContent()}</div>
         {isOpenModal && (
