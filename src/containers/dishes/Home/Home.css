@@ -1,5 +1,20 @@
 .main-dishes-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 280px));
-  gap: 30px;
+  gap: var(--space-xl);
+  margin-top: var(--space-lg);
+}
+
+.nav-btn-checkout {
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--border-radius-lg);
+  text-transform: uppercase;
+  background: var(--color-bg-button-600);
+  color: var(--color-text-white);
+  transition: all 0.3s ease;
+  letter-spacing: var(--space-xs);
+}
+
+.nav-btn-checkout:hover {
+  transform: scale(0.9);
 }
