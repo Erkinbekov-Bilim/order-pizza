@@ -10,9 +10,11 @@ const DishCart = () => {
     <>
       <div className="dish-cart">
         <p className="dish-cart-title">your order</p>
-        {cartDishes.map((cart) => (
-          <DishCartItem cartDish={cart} />
-        ))}
+        <div className='dish-cart-block'>
+          {cartDishes.map((cart) => (
+            <DishCartItem cartDish={cart} />
+          ))}
+        </div>
       </div>
     </>
   );
