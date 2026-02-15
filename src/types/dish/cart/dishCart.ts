@@ -1,3 +1,5 @@
-export interface IDishOrderApi {
-  [key: string]: number;
+import { type IDish } from '../dish';
+export interface IDishCart {
+  dish: IDish;
+  count: number;
 }
