@@ -4,11 +4,13 @@
   --color-bg-tag-main: #ffffff;
   --color-bg-header: #eeeeee;
 
+  --color-bg-100: #ffccc1;
+
   --color-text-white: #ffffff;
   --color-text-100: #adb3d4;
-  --color-text-500: #ff59a6;
+  --color-text-500: #ff5029;
   --color-text-600: #555688;
-  --color-text-800: #414141;
+  --color-text-800: #d9804c;
   --color-text-900: #221c3b;
 
   --color-bg-text-50: #eceff1;
@@ -23,10 +25,11 @@
   --color-nav-link-active: #221c3b;
 
   --color-bg-button: #e4d3ff;
-  --color-border-button: #e4d3ff;
+  --color-border-button: #ff0000;
 
   --color-bg-button-white: #ffffff;
-  --color-bg-button-500: #ede0ff;
+  --color-bg-button-500: #a1f4af;
+  --color-bg-button-600: #535353;
   --color-bg-button-300: #5a2f64;
   --color-bg-button-tap: #8371a3;
   --color-bg-button-500-tap: #d3b4ff;
@@ -39,7 +42,7 @@
   --color-border-button-hover: #f0b8c9;
 
   --color-bg-card: #555688;
-
+  --color-bg-card-100: #ebebeb;
   --color-bg-card-white: #ffffff;
   --color-card-border: #212121;
 
@@ -54,12 +57,13 @@
 
   --color-loader: #482279;
 
-  --color-scrollbar-track: #ffffff;
-  --color-scrollbar-thumb: #bdbdbd;
+  --color-scrollbar-track: #ffc8c8;
+  --color-scrollbar-thumb: #de4444;
 
   --color-shadow: #ffe0fb;
 
   --color-border: #000000;
+  --color-border-100: #ffece8;
   --color-bg-hover: #ffeef8;
   --color-correct: #d5f8f5;
   --color-incorrect: #ff7e8b;
